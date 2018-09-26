@@ -7,6 +7,6 @@
   },
   "lampName": "Light",
   "onColor": "#cc0029",
-  "quietStartTime": "00:00",
-  "quietEndTime": "08:00"
+  "quietHourStartTime": 0,
+  "quietHourEndTime": 8
 }

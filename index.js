@@ -95,6 +95,16 @@ function savePreviousState(devices) {
 
 function checkForTimes() {
   return new Promise((resolve, reject) => {
+    const start = config.quietHourStartTime;
+    const end = config.quietHourEndTime;
+    const now = new Date();
+    const nowHour = now.getHours();
+    const isWithinHours = nowHour > start && nowHour < end;
+
+    if (isWithinHours) {
+      return reject(new Error('QUIET_HOURS'));
+    }
+
     resolve();
   });
 }
